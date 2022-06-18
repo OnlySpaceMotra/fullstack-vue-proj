@@ -1,6 +1,8 @@
 <template>
-  <page-component title="Dashboard">
-    Content Is here now
+  <page-component>
+    <template v-slot:header>
+      <h1>Content Is here now</h1>
+    </template>
   </page-component>
 </template>
 

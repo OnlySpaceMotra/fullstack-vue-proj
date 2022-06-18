@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Dashboard from "@/views/Dashboard.vue";
 import Login from "@/views/Login.vue";
 import Register from "@/views/Register.vue";
+import SurveysView from "@/views/SurveysView.vue";
 import Surveys from "@/views/Surveys.vue";
 import DefaultLayout from "@/components/DefaultLayout.vue";
 import AuthLayout from "@/components/AuthLayout.vue";
@@ -17,16 +18,10 @@ const router = createRouter({
       component: DefaultLayout,
       meta: {requiresAuth: true},
       children: [
-        {
-          path: '/dashboard',
-          name: 'Dashboard',
-          component: Dashboard
-        },
-        {
-          path: '/surveys',
-          name: 'Surveys',
-          component: Surveys
-        }
+        {path: '/dashboard',name: 'Dashboard',component: Dashboard},
+        {path: '/surveys',name: 'Surveys', component: Surveys},
+        {path: '/surveys/create',name: 'SurveyCreate', component: SurveysView},
+        {path: '/surveys/:id',name: 'SurveyView', component: SurveysView},
       ]
     },
     {
